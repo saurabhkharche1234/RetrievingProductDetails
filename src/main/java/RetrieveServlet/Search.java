@@ -17,7 +17,7 @@ public class Search extends HttpServlet {
 	response.setContentType("text/html");  
 	PrintWriter out = response.getWriter();  
 		          
-	String name =request.getParameter("pname");   
+	String pid =request.getParameter("pname");   
 		          
 	try{  
 		final String url ="jdbc:mysql:///product";
@@ -27,7 +27,7 @@ public class Search extends HttpServlet {
 		//establish a connection
 		Connection con = DriverManager.getConnection(url,user,password);
 		 Statement st = con.createStatement();
-		String Query = "select * from product_details where name="+name;
+		String Query = "select * from product_details where id="+pid;
 				
 		
 		 ResultSet rs = st.executeQuery(Query);
